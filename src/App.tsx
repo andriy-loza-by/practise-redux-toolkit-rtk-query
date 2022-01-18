@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
+import {useAppDispatch, useAppSelector} from "./hooks/redux";
+import {userSlice} from "./store/reducers/UserSlice";
+import {useDispatch} from "react-redux";
+import {fetchUsers} from "./store/reducers/ActionCreators";
 
 function App() {
-  return (
+    const {users, error, isLoading} = useAppSelector(state => state.userReducer)
+    //const {increment} = userSlice.actions;
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchUsers())
+    }, [])
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/*<h2>Count: {count}</h2>*/}
+        {/*<button onClick={() => dispatch(increment(5))}>INCREMENT</button>*/}
+        {isLoading && <h2>LOADING ...</h2>}
+        {error && <h2>Error loading users</h2>}
+        {!error && !isLoading && JSON.stringify(users, null, 2)}
     </div>
   );
 }
