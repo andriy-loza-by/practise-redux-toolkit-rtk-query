@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "post title 1",
+      "body": "post body 1"
+    },
+    {
+      "id": 2,
+      "title": "post title 2",
+      "body": "post body 2"
+    },
+    {
+      "id": 3,
+      "title": "post title 3",
+      "body": "post body 3"
+    },
+    {
+      "id": 4,
+      "title": "post title 4",
+      "body": "post body 4"
+    },
+    {
+      "id": 5,
+      "title": "post title 5",
+      "body": "post body 5"
+    },
+    {
+      "id": 6,
+      "title": "post title 6",
+      "body": "post body 6"
+    },
+    {
+      "title": "post 7",
+      "body": "7 7 7 7 7 ",
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "games": [],
+  "profile": {
+    "name": "LA"
+  }
+}
